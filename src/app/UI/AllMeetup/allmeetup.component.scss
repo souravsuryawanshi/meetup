@@ -1,0 +1,17 @@
+.h{
+  width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty{
+  color: red;
+  font-size: 18px;
+}
+
+.load{
+  color: green;
+  font-size: 18px;
+  font-weight: bolder;
+}

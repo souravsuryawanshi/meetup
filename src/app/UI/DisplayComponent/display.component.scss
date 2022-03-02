@@ -1,0 +1,54 @@
+img{
+  width: 350px;
+  height: 350px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+
+.cards{
+  align-self:center;
+  min-height: 400px;
+  height:auto;
+  width: 500px;
+  background-color: cornsilk;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.des{
+  width: 320px;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+
+}
+
+button{
+  border: none;
+}
+
+.button{
+ width:160px;
+ margin: 20px 0px;
+ height: 30px;
+ font-weight: bold;
+ background-color: lighten(blue,20%);
+ color:white;
+ border-radius: 5px;
+
+}
+
+//animated
+
+
+.des{
+  transition: transform .6s ease-in-out;
+}
+
+.cards:hover .des{
+  transform: translate(20%);
+}

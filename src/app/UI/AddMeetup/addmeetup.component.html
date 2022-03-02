@@ -1,0 +1,35 @@
+<div class="cover">
+<div class="left">
+  <img  src="../../../assets/undraw_sign_in_re_o58h.svg" >
+</div>
+
+<div class="right">
+<div class="h"><h1>Add New Meet</h1></div>
+<form (submit)="onSubmit()" class="form-wrap">
+
+  <app-input [fieldValues]="address"
+    [empty]="address.empty" >
+  </app-input>
+
+  <app-input [fieldValues]="description"
+  [empty]="address.empty" >
+</app-input>
+
+<app-input [fieldValues]="image"
+[empty]="image.empty" >
+</app-input>
+
+
+  <app-input [fieldValues]="title"
+   [empty]="title.empty" >
+  </app-input>
+
+  <app-login  [isdisabled]="description.disable && address.disable && image.disable && title.disable">
+    Add-Meet
+  </app-login>
+
+</form>
+</div>
+</div>
+
+

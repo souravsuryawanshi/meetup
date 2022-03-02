@@ -1,0 +1,14 @@
+<div *ngIf="!loading">
+ <div *ngIf="data.length<1" class="empty">No Data</div>
+ <div *ngIf="data.length >0">
+  <div class="h"><h1>All Meetups</h1></div>
+<div  *ngFor="let item of data">
+      <app-display [item] = "item"></app-display>
+</div>
+</div>
+
+</div>
+
+<div *ngIf = "loading" class="load">
+  Loading...
+</div>

@@ -1,0 +1,9 @@
+
+<div class="cards">
+  <img [src] = "item.image">
+  <div class="des" ><strong><u>Description</u></strong> : {{item.description}}</div>
+  <div class="des" ><strong><u>Address</u></strong> : {{item.address}}</div>
+  <div class="des" ><strong><u>Title</u></strong> : {{item.title}}</div>
+  <button class="button"  *ngIf='!checkIfExist()' (click)="addFavoriteHandler()">To Favorites</button>
+  <button class="button" *ngIf='checkIfExist()' (click)="removeFromFavorites()">Remove From Favorites</button>
+</div>

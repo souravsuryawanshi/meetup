@@ -1,0 +1,65 @@
+.cover{
+  width: 1020px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.h{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left{
+  width:400px;
+  height: 400px;
+}
+
+img{
+  width: 500px;
+  height: 500px;
+}
+
+
+.form-wrap{
+  background-color: white;
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: .1rem solid skyblue;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+
+}
+
+
+.space{
+
+  margin-bottom: .75rem;
+  width:80%;
+  display:flex;
+  justify-content: space-between;
+  color: black;
+
+}
+
+.link{
+
+  font-size: .75rem;
+  color: darken(red, 5%);
+  font-weight: 600;
+}
+
+.link:hover{
+
+ color: darken(red,10%);
+}
+
+
