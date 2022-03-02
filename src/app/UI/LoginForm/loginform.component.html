@@ -26,7 +26,7 @@
    [empty]="passwordValues.empty" >
   </app-input>
 
-
+ <span *ngIf="receivedError.length >0" style="color:red">{{receivedError}}</span>
   <app-login  [isdisabled]="usernameValues.disable && passwordValues.disable">
     Login
   </app-login>
