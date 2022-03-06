@@ -24,7 +24,10 @@
    [empty]="title.empty" >
   </app-input>
 
-  <app-login  [isdisabled]="description.disable && address.disable && image.disable && title.disable">
+  <app-login *ngIf="!loading"  [isdisabled]="description.disable && address.disable && image.disable && title.disable">
+    Add-Meet
+  </app-login>
+  <app-login *ngIf="loading" [isdisabled]="true">
     Add-Meet
   </app-login>
 

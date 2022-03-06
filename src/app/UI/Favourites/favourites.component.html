@@ -1,11 +1,11 @@
 
-<div class="empty" *ngIf = 'favorites.length < 1'>
+<div class="empty" *ngIf = 'favorites.length<1'>
   No Favourites Found!
 </div>
 
 <div *ngIf="favorites.length > 0">
 <div class="h"><h1>Favourites</h1></div>
 <div *ngFor="let item of favorites">
-  <app-display [item] = "item"></app-display>
+<app-display [item] = "item"></app-display>
 </div>
 </div>

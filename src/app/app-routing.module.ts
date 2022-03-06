@@ -7,6 +7,8 @@ import {
   FavouritesComponent,
   LoginFormComponent,
   PageErrorComponent,
+  SingleCard,
+  DummyComponent,
 } from './UI';
 
 const routes: Routes = [
@@ -23,10 +25,21 @@ const routes: Routes = [
     path: 'favourites',
     component: FavouritesComponent,
   },
-
+  {
+    path: 'refresh',
+    component: DummyComponent,
+  },
   {
     path: 'add_new_meet',
     component: AddMeetupComponent,
+  },
+  {
+    path: 'all_meets',
+    component: AllMeetupComponent,
+  },
+  {
+    path: 'all_meets/:id',
+    component: SingleCard,
   },
   {
     path: '**',

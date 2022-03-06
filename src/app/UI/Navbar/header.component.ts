@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   navigateHome(item: boolean) {
     this._log.logoutClicked();
-    this._router.navigateByUrl('');
+    this._router.navigateByUrl('all_meets');
   }
 
   addNewMeet(item: boolean) {
@@ -38,6 +38,6 @@ export class HeaderComponent implements OnInit {
   }
 
   displayAllMeet(item: boolean) {
-    this._router.navigateByUrl('');
+    this._router.navigateByUrl('all_meets');
   }
 }

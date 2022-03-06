@@ -1,9 +1,25 @@
 
-<div class="cards">
-  <img [src] = "item.image">
-  <div class="des" ><strong><u>Description</u></strong> : {{item.description}}</div>
-  <div class="des" ><strong><u>Address</u></strong> : {{item.address}}</div>
-  <div class="des" ><strong><u>Title</u></strong> : {{item.title}}</div>
-  <button class="button"  *ngIf='!checkIfExist()' (click)="addFavoriteHandler()">To Favorites</button>
-  <button class="button" *ngIf='checkIfExist()' (click)="removeFromFavorites()">Remove From Favorites</button>
+<div *ngIf="!single"
+class="cards">
+  <img [src] = "item.image"  (click)="displaySingleCard()" class="img1">
+  <div class="des" ><strong>Description : </strong>{{item.description | titlecase}}</div>
+  <div class="des" ><strong>Address : </strong>{{item.address | titlecase}}</div>
+  <div class="des" ><strong>Title : </strong>{{item.title | titlecase}}</div>
+  <button class="button"  *ngIf='!checkIfExist() || !flag' (click)="addFavoriteHandler()" class="button1">To Favorites</button>
+  <button class="button" *ngIf='checkIfExist() && flag' (click)="removeFromFavorites()" class="button1">Remove From Favorites</button>
+</div>
+
+
+<div *ngIf="single" class="single">
+       <div class="left">
+        <div class="des1"><strong>Title : </strong><br>{{item.title | titlecase}}</div>
+        <div class="des1"><strong>Address : </strong><br>{{item.address | titlecase}}</div>
+        <div class="des1"><strong>Description : </strong><br>{{item.description | titlecase}}</div>
+       </div>
+       <div class="left1"></div>
+       <div class="right">
+        <img [src] = "item.image" class="img">
+        <button class="button"  *ngIf='!checkIfExist() || !flag' (click)="addFavoriteHandler()" class="button2">To Favorites</button>
+       <button class="button" *ngIf='checkIfExist() && flag' (click)="removeFromFavorites()" class="button2">Remove From Favorites</button>
+       </div>
 </div>

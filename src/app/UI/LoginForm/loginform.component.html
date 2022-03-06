@@ -27,10 +27,12 @@
   </app-input>
 
  <span *ngIf="receivedError.length >0" style="color:red">{{receivedError}}</span>
-  <app-login  [isdisabled]="usernameValues.disable && passwordValues.disable">
+  <app-login *ngIf="!loading" [isdisabled]="usernameValues.disable && passwordValues.disable">
     Login
   </app-login>
-
+ <app-login *ngIf="loading" [isdisabled]="true">
+    Login
+  </app-login>
 
 
 

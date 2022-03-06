@@ -16,6 +16,7 @@ export class LoginFormComponent {
   ) {}
 
   receivedError: string = '';
+  loading: boolean = false;
 
   usernameValues = {
     emailValidate: new RegExp(
@@ -82,6 +83,7 @@ export class LoginFormComponent {
     } else if (this.passwordValues.value.length < 1) {
       this.passwordValues.empty = true;
     } else if (this.usernameValues.validated && this.passwordValues.validated) {
+      this.loading = true;
       this._http
         .post('https://reqres.in/api/login', {
           email: this.usernameValues.value,
@@ -90,12 +92,14 @@ export class LoginFormComponent {
         .pipe(take(1))
         .subscribe(
           (response: any) => {
+            this.loading = false;
             this.receivedError = '';
-            console.log(response.token);
+            //console.log(response.token);
             this._log.onLoginSuccess(response.token);
-            this._route.navigateByUrl('');
+            this._route.navigateByUrl('all_meets');
           },
           (error) => {
+            this.loading = false;
             this.receivedError = error.error.error;
           }
         );

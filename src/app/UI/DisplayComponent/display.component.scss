@@ -1,4 +1,4 @@
-img{
+.img1{
   width: 350px;
   height: 350px;
   border-radius: 5px;
@@ -31,7 +31,7 @@ button{
   border: none;
 }
 
-.button{
+.button1{
  width:160px;
  margin: 20px 0px;
  height: 30px;
@@ -42,13 +42,124 @@ button{
 
 }
 
+
+.button1:hover{
+  background-color: lighten(blue,10%);
+ }
 //animated
 
 
 .des{
-  transition: transform .6s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 
 .cards:hover .des{
-  transform: translate(20%);
+  transform: translate(2%);
 }
+
+
+
+.single{
+   margin-top: 40px;
+   width : 576px;
+   background-color: aquamarine;
+   border-radius: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   height: auto;
+
+   .left{
+    padding-left: 20px;
+    width:256px;
+    height: 320px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 8px;
+    // z-index: -1;
+    .des1{
+         margin: 8px;
+    }
+
+   }
+
+
+   .right{
+     width:320px;
+     height: 350px;
+     background-color: cornsilk;
+     border-radius: 8px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     .img{
+
+       width:250px;
+       height: 250px;
+       border-radius: 5px;
+
+     }
+     .button2{
+      margin-top: 20px;
+      width:160px;
+      height: 30px;
+      font-weight: bold;
+      background-color: lighten(blue,20%);
+      color:white;
+      border-radius: 5px;
+
+     }
+     .button2:hover{
+      background-color: lighten(blue,10%);
+     }
+   }
+
+}
+
+
+.left{
+  transition: transform .6s ease-in-out;
+}
+.single:hover .left{
+  background-color: blanchedalmond;
+  transform: translateX(-50%);
+  //  z-index: 1;
+}
+
+// @keyframes example{
+
+//   0%{
+//        transform: translate(0);
+//        background-color: aquamarine;
+
+//   }
+//   10%{
+//     background-color: blanchedalmond;
+//   }
+//   25%{
+//     background-color: blanchedalmond;
+//     transform: translateX(-50%);
+//   }
+
+//   75%{
+//     background-color: blanchedalmond;
+//   }
+// 100%{
+//   background-color: aquamarine;
+
+// }
+
+// }
+
+// .left{
+//   animation: example 4s ease-in infinite;
+//   animation-play-state: paused;
+// }
+
+// .left:hover{
+//   animation-play-state: running;
+// }

@@ -9,3 +9,5 @@ export * from './Navbar/Links/links.component';
 export * from './DisplayComponent/display.component';
 export * from './AddMeetup/Input/input.component';
 export * from './AddMeetup/login/login.component';
+export * from './SingleCard/singlecard.component';
+export * from './Dummies/dummy.component';

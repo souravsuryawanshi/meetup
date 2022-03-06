@@ -5,7 +5,7 @@
   <label>MeetUp</label>
    </div>
   <app-links (out)="displayAllMeet($event)"> <strong>All Meetings</strong> </app-links>
-  <app-links (out)="addNewMeet($event)"> <strong>Add-Meetup</strong></app-links>
+  <app-links  *ngIf="login_status" (out)="addNewMeet($event)"> <strong>Add-Meetup</strong></app-links>
   <app-links *ngIf="!login_status" (out)="navigateLogin($event)"> <strong>Login </strong></app-links>
   <app-links *ngIf="login_status" (out)="navigateFavorite()"> <strong>Favorites</strong> </app-links>
   <app-links *ngIf="login_status"  (out)="navigateHome($event)">  <strong>Logout </strong></app-links>

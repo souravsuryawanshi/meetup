@@ -11,6 +11,7 @@ import { LoginStatus } from 'src/app/Services/login-status.service';
 })
 export class AddMeetupComponent {
   receivedError: string = '';
+  loading: boolean = false;
 
   constructor(
     private _route: Router,
@@ -132,6 +133,7 @@ export class AddMeetupComponent {
       this.image.validated &&
       this.title.validated
     ) {
+      this.loading = true;
       this._http
         .post(
           'https://meetup-88c8c-default-rtdb.asia-southeast1.firebasedatabase.app/meetups.json',
@@ -145,11 +147,13 @@ export class AddMeetupComponent {
         .pipe(take(1))
         .subscribe(
           (response: any) => {
+            this.loading = false;
             console.log(response.token);
 
             this._route.navigateByUrl('');
           },
           (error) => {
+            this.loading = false;
             this.receivedError = error.error.error;
           }
         );

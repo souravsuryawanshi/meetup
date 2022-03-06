@@ -63,3 +63,16 @@ img{
 }
 
 
+@media screen and (max-width:550px){
+  .cover{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    align-items: center;
+  }
+  img{
+    width:400px;
+    height: 400px;
+  }
+}
