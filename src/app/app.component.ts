@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'meetup';
   constructor(private _route: Router, private _log: LoginStatus) {}
   ngOnInit() {
-    this._route.navigateByUrl('');
+    // this._route.navigateByUrl('');
   }
 }

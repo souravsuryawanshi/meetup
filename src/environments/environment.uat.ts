@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  passwordLength: 2,
+  passwordLength: 8,
 };

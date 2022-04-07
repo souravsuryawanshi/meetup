@@ -9,15 +9,19 @@ import { LoginStatus } from 'src/app/Services/login-status.service';
 })
 export class HeaderComponent implements OnInit {
   login_status: boolean = false;
-
   constructor(private _log: LoginStatus, private _router: Router) {}
 
   ngOnInit(): void {
     this._listener();
+    // this.login_status = this._log.getLoginStatus();
+    // this.login_status = localStorage.getItem('user_login_status') === 'true';
+    // this._log.status.subscribe((res: any) => (this.login_status = res));
+    // above line appended after localstorage
   }
 
   private _listener() {
     this._log.status.subscribe((res: any) => (this.login_status = res));
+    this.login_status = this._log.getLoginStatus();
   }
 
   navigateLogin(item: boolean) {
@@ -26,6 +30,7 @@ export class HeaderComponent implements OnInit {
 
   navigateHome(item: boolean) {
     this._log.logoutClicked();
+    // this.login_status = this._log.getLoginStatus();
     this._router.navigateByUrl('all_meets');
   }
 

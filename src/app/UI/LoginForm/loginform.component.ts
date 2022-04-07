@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/internal/operators/take';
 import { LoginStatus } from 'src/app/Services/login-status.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login_form',
   templateUrl: './loginform.component.html',
@@ -33,7 +34,7 @@ export class LoginFormComponent {
     isValid: function () {
       let result = true;
 
-      if (this.value.trim().length < 1) {
+      if (this.value.trim().length < environment.minLength) {
         this.errorMessage = 'Email field cannot be empty!';
         result = false;
       } else if (!this.emailValidate.test(this.value)) {
@@ -94,7 +95,7 @@ export class LoginFormComponent {
           (response: any) => {
             this.loading = false;
             this.receivedError = '';
-            //console.log(response.token);
+            // console.log(response.token);
             this._log.onLoginSuccess(response.token);
             this._route.navigateByUrl('all_meets');
           },
